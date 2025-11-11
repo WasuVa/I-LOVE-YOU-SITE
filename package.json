@@ -1,0 +1,21 @@
+{
+  "name": "i-love-you-website",
+  "version": "1.0.0",
+  "description": "A romantic website to express love with animations and sounds.",
+  "main": "src/js/app.js",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "keywords": [
+    "love",
+    "romantic",
+    "animation",
+    "website"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
