@@ -10,7 +10,6 @@ function showMessage() {
 }
 
 function createConfetti() {
-    // Logic to generate confetti effect
     for (let i = 0; i < 100; i++) {
         const confetti = document.createElement('div');
         confetti.classList.add('confetti');

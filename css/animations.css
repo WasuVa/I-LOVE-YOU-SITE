@@ -33,10 +33,12 @@
 
 @keyframes glow-pulse {
     0%, 100% {
-        text-shadow: 0 0 10px rgba(255, 105, 180, 0.5), 0 0 20px rgba(255, 20, 147, 0.3);
+        text-shadow: 0 0 8px rgba(255, 127, 80, 0.5), 
+                     0 0 15px rgba(255, 160, 122, 0.3);
     }
     50% {
-        text-shadow: 0 0 20px rgba(255, 105, 180, 1), 0 0 40px rgba(255, 20, 147, 0.8), 0 0 60px rgba(255, 69, 0, 0.5);
+        text-shadow: 0 0 12px rgba(255, 127, 80, 0.7), 
+                     0 0 20px rgba(255, 160, 122, 0.5);
     }
 }
 
@@ -80,24 +82,39 @@
     font-family: 'Arial Black', 'Comic Sans MS', cursive, sans-serif;
     font-size: 6rem;
     font-weight: 900;
-    background: linear-gradient(90deg, #ff1493, #ff69b4, #ff1493, #ff6347, #ff69b4);
+    background: linear-gradient(90deg, 
+        #ffffff, 
+        #ffcccb, 
+        #ff7f50, 
+        #ffa07a, 
+        #ffcccb,
+        #ffffff);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-align: center;
-    animation: fadeIn 2s ease-in-out, heartbeat 1.5s ease-in-out infinite, glow-pulse 2s ease-in-out infinite, rainbow-gradient 4s linear infinite;
+    animation: fadeIn 2s ease-in-out, 
+               heartbeat 1.5s ease-in-out infinite, 
+               glow-pulse 2s ease-in-out infinite, 
+               rainbow-gradient 6s linear infinite;
     position: relative;
     z-index: 10;
     letter-spacing: 8px;
-    filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.6)) drop-shadow(0 0 30px rgba(255, 20, 147, 0.4));
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) 
+            drop-shadow(0 0 12px rgba(255, 127, 80, 0.5));
     margin: 0;
     line-height: 1.2;
     padding: 0 20px;
 }
 
 .animated-message:hover {
-    animation: fadeIn 2s ease-in-out, heartbeat 0.8s ease-in-out infinite, glow-pulse 1s ease-in-out infinite, rainbow-gradient 2s linear infinite;
+    animation: fadeIn 2s ease-in-out, 
+               heartbeat 0.6s ease-in-out infinite, 
+               glow-pulse 0.8s ease-in-out infinite, 
+               rainbow-gradient 2s linear infinite;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Love Decorations */
