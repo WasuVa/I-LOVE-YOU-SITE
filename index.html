@@ -171,23 +171,60 @@
             animation: gradient-shift 15s ease infinite;
         }
 
-        /* Mobile Optimizations */
+        /* Aggressive Mobile Optimizations */
         @media (max-width: 768px) {
-
-            .orb-glow-animation,
+            /* Disable heavy animations on mobile */
+            .orb-glow-animation {
+                animation: none !important;
+                opacity: 0.15 !important;
+                filter: blur(30px) !important;
+            }
+            
             .float-up-animation,
-            .drift-animation,
+            .drift-animation {
+                animation: none !important;
+                display: none !important;
+            }
+            
             .bokeh-animation {
-                animation-duration: 10s !important;
+                animation: none !important;
+                opacity: 0.2 !important;
+                filter: blur(5px) !important;
+            }
+            
+            .shimmer-animation {
+                animation: none !important;
+                opacity: 0.3 !important;
             }
 
-            /* Reduce blur for better mobile performance */
+            /* Simplify remaining animations */
+            .float-animation {
+                animation-duration: 4s !important;
+            }
+            
+            .rotate-animation {
+                animation: none !important;
+            }
+            
+            .scale-pulse-animation {
+                animation: none !important;
+                opacity: 0.3 !important;
+            }
+
+            /* Reduce blur drastically */
             .blur-md {
-                filter: blur(8px);
+                filter: blur(4px) !important;
             }
 
             .blur-3xl {
-                filter: blur(20px);
+                filter: none !important;
+            }
+            
+            /* Simplify background */
+            body {
+                background: linear-gradient(-45deg, #8B0000, #DC143C, #FF1493, #FF69B4);
+                background-size: 200% 200%;
+                animation-duration: 20s !important;
             }
         }
 
@@ -201,6 +238,16 @@
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
+        }
+        
+        /* GPU Acceleration for smooth animations */
+        .float-animation,
+        .rotate-animation,
+        .scale-pulse-animation,
+        .animated-message {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
         }
 
         .float-animation {
@@ -241,6 +288,16 @@
 
         .bokeh-animation {
             animation: bokeh-pulse 4s ease-in-out infinite;
+        }
+        
+        /* GPU Acceleration for smooth animations */
+        .float-animation,
+        .rotate-animation,
+        .scale-pulse-animation,
+        .animated-message {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
         }
     </style>
     <script>
